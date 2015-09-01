@@ -1,0 +1,44 @@
+<!DOCTYPE HTML >
+<html>
+  <head>
+    <title>
+      My Form
+    </title>
+  </head>
+
+  <body>
+    <p id="notice"><%= notice %></p>
+
+    <h3>Listing Posts</h3>
+
+    <table>
+      <thead>
+        <tr style="padding: 10px; ">
+          <th>Title</th>
+          <th>Comment</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <hr>
+
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr style="padding: 10px;">
+            <td><%= post.title %></td>
+            <td><%= post.comment %></td>
+          </tr>
+          <tr>
+            <td><%= link_to 'Show', post %> </td>
+            <td><%= link_to 'Edit', edit_post_path(post) %></td>
+            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New post', new_post_path %>
+  </body>
+</html>
