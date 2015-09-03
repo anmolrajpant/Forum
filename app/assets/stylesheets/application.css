@@ -15,11 +15,14 @@
  */
 body
 {
+   	margin: 5mm 16mm 0mm 16mm;
 	background-color: rgba(80, 44, 5, 0.34);
 	padding: 10px;
-	margin: 0px auto;
+	
 }
-
+#page_cont{
+	background-color: ;
+}
 header
 {
 	background-color: rgba(6, 6, 6, 0.33);
@@ -49,8 +52,27 @@ h5
 		margin-left: 5px;
 		margin-bottom: 5px;
 }
+a{
+	text-decoration: none;
+}
 
-table
-{
-	border: 1px solid #000;
+a{
+    color: black;
+}
+
+
+a:hover {
+    color:white ;
+}
+
+button{
+	border-radius: 20px;
+}
+#links{
+	background-color: rgba(6, 6, 6, 0.33);
+	border-radius: 20px;
+	display: inline-block;
+	padding: 5px;
+	box-shadow: 0 1px o rgba(255,255,255,0.5) inset, 0 0 5px rgba(0, 0, 0, 0.1);
+
 }

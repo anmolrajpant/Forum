@@ -7,6 +7,7 @@
   </head>
 
   <body>
+  <div id="page_cont">
     <p id="notice"><%= notice %></p>
 
     <h3>Listing Posts</h3>
@@ -14,8 +15,8 @@
     <table>
       <thead>
         <tr style="padding: 10px; ">
-          <th>Title</th>
-          <th>Comment</th>
+          <th style="padding: 5px;">Title</th>
+          <th style="padding: 5px;">Comment</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -38,7 +39,10 @@
     </table>
 
     <br>
-
-    <%= link_to 'New post', new_post_path %>
+    <div id="links">
+      <%= link_to 'Create new post', new_post_path %>
+      
+    </div>
+    </div>
   </body>
 </html>
