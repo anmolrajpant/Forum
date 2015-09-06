@@ -33,6 +33,8 @@
             <td><%= link_to 'Show', post %> </td>
             <td><%= link_to 'Edit', edit_post_path(post) %></td>
             <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Add comment', new_post_comment_path(post) %></td>
+            <td><%= link_to 'View comment', post_comments_path(post) %></td>
           </tr>
         <% end %>
       </tbody>
@@ -41,7 +43,7 @@
     <br>
     <div id="links">
       <%= link_to 'Create new post', new_post_path %>
-      
+
     </div>
     </div>
   </body>
