@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def index
     @post = Post.find(params[:post_id])
-    @comments= @post.comments
+    @comments= @post.post_comments_path
   end
 
   def show
@@ -15,12 +15,13 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @posts = Post.find(params[:id])
-    @comment = @Post.build_comment()
+    #@comment.save
+
+    @post = Post.find(params[:post_id])
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
