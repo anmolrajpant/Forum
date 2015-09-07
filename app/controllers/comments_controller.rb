@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def index
     @post = Post.find(params[:post_id])
-    @comments= @post.post_comments_path
+    @comments= @post.comments
   end
 
   def show
@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
     #@comment.save
 
     @post = Post.find(params[:post_id])
-
+@comments = @post.comments.new(save)
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -31,14 +31,26 @@ class CommentsController < ApplicationController
   end
 
   def delete
+
   end
 
   def destroy
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+    @comment.destroy
   end
 
   def update
+   @post = Post.find(params[:post_id]) 
+   @comment = @post.comments.find(params[:id])
+   @comment.update_attributes(save)
   end
 
   def edit
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
   end
+  private def save
+params.require(:comment).permit(:description)
+end
 end
