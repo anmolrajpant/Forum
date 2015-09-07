@@ -17,7 +17,7 @@
       <tr>
         <td><%= comment.description %></td>
 
-        <td><%= link_to("Edit/Update", edit_post_comment_path(@post,comment.id))%></td>
+        <td><%= link_to("Edit | ", edit_post_comment_path(@post,comment.id))%></td>
         <td><%= link_to("Delete",post_comment_path(@post, comment.id), method: :destroy)%></td>
       </tr>
     <% end %>
