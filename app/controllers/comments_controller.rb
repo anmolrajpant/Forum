@@ -30,14 +30,15 @@ class CommentsController < ApplicationController
     end
   end
 
-  def delete
-
-  end
 
   def destroy
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
-    @comment.destroy
+    if @comment.destroy
+      redirect_to(:action => :index)
+    end
+
+    
   end
 
   def update

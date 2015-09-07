@@ -12,9 +12,9 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
-    <%= f.label :name %>
-    <%= f.label :description %><br>
+    <%= f.label("Name:")%><br>
+    <%= f.text_field :name %><br>
+    <%= f.label ("Comment:")%><br>
     <%= f.text_area :description %>
   </div>
   <div class="actions">

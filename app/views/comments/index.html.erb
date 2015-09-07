@@ -1,5 +1,3 @@
-<h1>Comments#index</h1>
-
 <p id="notice"><%= notice %></p>
 
 <h1>Comments</h1>
@@ -18,7 +16,7 @@
         <td><%= comment.description %></td>
 
         <td><%= link_to("Edit | ", edit_post_comment_path(@post,comment.id))%></td>
-        <td><%= link_to("Delete",post_comment_path(@post, comment.id), method: :destroy)%></td>
+        <td><%= link_to("Delete",post_comment_path(@post, comment.id), method: :delete)%></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,6 +25,3 @@
 <br>
 
 <%= link_to("New Comment",new_post_comment_path(@post))%>
-
-
-<p>Find me in app/views/comments/index.html.erb</p>
