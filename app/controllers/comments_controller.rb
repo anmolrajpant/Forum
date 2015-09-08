@@ -44,7 +44,9 @@ class CommentsController < ApplicationController
   def update
    @post = Post.find(params[:post_id]) 
    @comment = @post.comments.find(params[:id])
-   @comment.update_attributes(save)
+   if @comment.update_attributes(save)
+    redirect_to(:action => :index)
+   end
   end
 
   def edit

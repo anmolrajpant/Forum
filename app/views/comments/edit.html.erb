@@ -1,8 +1,11 @@
-<h1>Comments#edit</h1>
-
 <%=form_for @comment, url:{:action => "update"} do |f|%>
-<%= f.text_field :description%>
+<p>Please update your comment below:</p>
+
+<%= f.label ("Name:") %><br>
+<%=f.text_field :name%><br>
+
+<%= f.label ("Comment:") %><br>
+<%= f.text_field :description%><br>
+
 <%= f.submit "update" %>
 <%end%>
-
-<p>Find me in app/views/comments/edit.html.erb</p>
