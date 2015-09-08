@@ -53,7 +53,8 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
   end
-  private def save
-params.require(:comment).permit(:description)
-end
+  private 
+  def save
+    params.require(:comment).permit(:description, :name)
+  end
 end
