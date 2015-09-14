@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
-    binding.pry
+    #binding.pry
   end
 
   def edit

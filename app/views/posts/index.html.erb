@@ -9,9 +9,11 @@
   <body>
   <div id="page_cont">
     <p id="notice"><%= notice %></p>
-
+      <%= form_for :search,url: '/search'  do |f| %>
+      <%= f.text_field :search_query %>
+      <%= f.submit 'Search' %>
+      <% end %>
     <h3>Listing Posts</h3>
-
     <table>
       <thead>
         <tr style="padding: 15px; ">
@@ -41,7 +43,6 @@
     <br>
     <div id="links">
       <%= link_to 'Create new post', new_post_path %>
-
     </div>
     </div>
   </body>

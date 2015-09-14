@@ -1,0 +1,10 @@
+<% if @results %>
+  <% @results.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= post.comment %></td>
+  </tr>
+  <% end %>
+	<% else %>
+  <tr><td>No posts</td></tr>
+<% end %>
