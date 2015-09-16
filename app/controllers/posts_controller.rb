@@ -51,9 +51,18 @@ class PostsController < ApplicationController
       end
     end
   end
+
   def report
     @post = Post.find(params[:id])
+    @post.report = true
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to @post, notice: 'This post has been reported.'}
+      #binding.pry
+      end
+    end
   end
+  
   def post_params
     params.require(:post).permit(:title, :comment)
   end

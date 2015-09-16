@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     member do
       post 'report'
     end
+    collection do
+      post 'archive'
+    end
     resources :comments
   end
 
