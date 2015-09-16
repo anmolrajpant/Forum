@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   resources :posts do
+    member do
+      post 'report'
+    end
     resources :comments
   end
 
